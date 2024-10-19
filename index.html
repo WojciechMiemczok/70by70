@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siatka Grid 100x100</title>
+    <style>
+        body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #5a5a5a;
+}
+
+.grid-container {
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(70, 10px);
+    grid-template-rows: repeat(70, 10px);
+    gap: 1;
+}
+
+.grid-container2 {
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(70, 10px);
+    grid-template-rows: repeat(70, 10px);
+    gap: 1;
+}
+
+.grid-item {
+    width: 10px;
+    height: 10px;
+}
+
+.container{
+    display: flex;
+    gap: 20px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <!-- Pętla w JS wygeneruje nam wszystkie okienka -->
+        </div>
+        <div class="grid-container2">
+            <!-- Pętla w JS wygeneruje nam wszystkie okienka -->
+        </div>
+    </div>
+    <script>
+        const gridContainer = document.querySelector('.grid-container');
+        const gridContainer2 = document.querySelector('.grid-container2');
+        const colors = ['#FFFFFF', '#FF0000', '#0000FF', '#FFFF00', '#00FF00',]
+        const copyColors = [];
+        var j = 0;
+
+        for (let i = 0; i < 4900; i++) {
+            const div = document.createElement('div');
+            div.classList.add('grid-item');
+            var boxColor = getRandomColor();
+            div.style.backgroundColor = boxColor;
+            gridContainer.appendChild(div);
+            copyColors.push(boxColor);
+        }
+
+        for (let i = 0; i < 4900; i++) {
+            const div = document.createElement('div');
+            div.classList.add('grid-item');
+            div.style.backgroundColor = copyColors[j];
+            div.addEventListener('click', () => {
+                div.style.backgroundColor = getRandomColor();
+            });
+            gridContainer2.appendChild(div);
+            j++;
+        }
+
+        function getRandomColor() {
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        console.log(copyColors);
+    </script>
+</body>
+</html>
