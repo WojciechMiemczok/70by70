@@ -18,22 +18,22 @@
 .grid-container {
     background-color: black;
     display: grid;
-    grid-template-columns: repeat(70, 6px);
-    grid-template-rows: repeat(70, 6px);
+    grid-template-columns: repeat(50, 8px);
+    grid-template-rows: repeat(50, 8px);
     gap: 1;
 }
 
 .grid-container2 {
     background-color: black;
     display: grid;
-    grid-template-columns: repeat(70, 6px);
-    grid-template-rows: repeat(70, 6px);
+    grid-template-columns: repeat(50, 8px);
+    grid-template-rows: repeat(50, 8px);
     gap: 0;
 }
 
 .grid-item {
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
 }
 
 .container{
@@ -50,26 +50,26 @@
         gap: 6px;
     }
     .grid-item{
-        width: 3px;
-        height: 3px;
+        width: 5px;
+        height: 5px;
     }
     .grid-container{
         justify-content: center;
         align-items: center;
         background-color: black;
-        height: 280px;
-        width: 280px;
-        grid-template-columns: repeat(70, 4px);
-        grid-template-rows: repeat(70, 4px);
+        height: 300px;
+        width: 300px;
+        grid-template-columns: repeat(50, 6px);
+        grid-template-rows: repeat(50, 6px);
     }
     .grid-container2{
         justify-content: center;
         align-items: center;
         background-color: black;
-        height: 280px;
-        width: 280px;
-        grid-template-columns: repeat(70, 4px);
-        grid-template-rows: repeat(70, 4px);
+        height: 300px;
+        width: 300px;
+        grid-template-columns: repeat(50, 6px);
+        grid-template-rows: repeat(50, 6px);
     }
 }
     </style>
@@ -90,7 +90,7 @@
         const copyColors = [];
         var j = 0;
 
-        for (let i = 0; i < 4900; i++) {
+        for (let i = 0; i < 2500; i++) {
             const div = document.createElement('div');
             div.classList.add('grid-item');
             var boxColor = getRandomColor();
@@ -99,7 +99,7 @@
             copyColors.push(boxColor);
         }
 
-        for (let i = 0; i < 4900; i++) {
+        for (let i = 0; i < 2500; i++) {
             const div = document.createElement('div');
             div.classList.add('grid-item');
             div.style.backgroundColor = copyColors[j];
