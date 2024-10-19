@@ -28,18 +28,48 @@
     display: grid;
     grid-template-columns: repeat(70, 10px);
     grid-template-rows: repeat(70, 10px);
-    gap: 1;
+    gap: 0;
 }
 
 .grid-item {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
 }
 
 .container{
     display: flex;
     gap: 20px;
 
+}
+@media(max-width: 800px){
+    .body{
+        margin-bottom: 5px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .grid-item{
+        width: 4px;
+        height: 4px;
+    }
+    .grid-container{
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 350px;
+        width: 350px;
+        grid-template-columns: repeat(70, 5px);
+        grid-template-rows: repeat(70, 5px);
+    }
+    .grid-container2{
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 350px;
+        width: 350px;
+        grid-template-columns: repeat(70, 5px);
+        grid-template-rows: repeat(70, 5px);
+    }
 }
     </style>
 </head>
